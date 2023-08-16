@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+
+        <div class="container mt-3">
+            <h1 style="color: blue">Técnica LE Automação e Projetos Elétricos Ltda. </h1>
+            <h2>Há mais de 20 anos entregando projetos elétricos e de automação para o Saneamento do Paraná!</h2>
+            <hr>
+            {% for post in posts %}
+                <div class="row border mt-4 p-3 meupost">
+                    <div class="col col-3">
+                        <div class="image pe-2">
+                        <img src="{{ url_for('static', filename='fotos_perfil/{}'.format(post.autor.foto_perfil)) }}" class="rounded" width="250" >
+                        </div>
+                        <strong>{{post.autor.username}}</strong><br>
+                        <strong>Projetos em andamento: </strong><br>
+                        <div class="row justify-content-center">
+                            {% for projeto in post.autor.projetos.split(';') %}
+                                <button type="button" class="btn btn-success mt-2" disabled> {{projeto}} </button>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="col col-9">
+                        <a style="text-decoration:none" href="{{url_for('exibir_post', post_id=post.id)}}"><h3>{{ post.titulo }}</h3></a>
+                        <p>{{ post.corpo }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+<div class="row mt-5">
+
+</div>
+
+{% endblock %}
