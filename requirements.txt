@@ -1,6 +1,7 @@
 anyio==3.7.1
 asttokens==2.0.8
 backcall==0.2.0
+bcrypt==4.0.1
 blinker==1.6.2
 certifi==2022.9.24
 charset-normalizer==2.1.1
@@ -14,6 +15,7 @@ entrypoints==0.4
 exceptiongroup==1.1.2
 executing==1.1.1
 Flask==2.3.2
+Flask-Bcrypt==1.0.1
 Flask-SQLAlchemy==3.0.5
 Flask-WTF==1.1.1
 greenlet==2.0.2
